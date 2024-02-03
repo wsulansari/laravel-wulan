@@ -16,3 +16,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::view('/template', 'template.master');
+
+Route::get('/helo', function(){
+    return"Hellowww...!!";
+})->name('helo');
+
+Route::post('/hai', function() {
+    return 'Haaaii';
+});
+
+
