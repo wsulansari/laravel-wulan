@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('tanggapans', function (Blueprint $table) {
             $table->id('id_tanggapans');
             $table->foreignId('id_pengaduans')->references('id')->on('pengaduans');
-            $table->date('tanggal_tanggapan');
+            $table->date('tanggal_tanggapans');
             $table->text('tanggapans');
             $table->foreignId('id_petugases')->constraind('petugases', 'id_petugases');
             $table->timestamps();
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tanggapans');
+        Schema::dropIfExists('tanggapan');
     }
 };
