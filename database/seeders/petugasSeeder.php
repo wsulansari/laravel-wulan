@@ -14,17 +14,17 @@ class PetugasSeeder extends Seeder
      */
     public function run(): void
     {
-        $petugas = DB::table('petugases')->pluck('id')->toArray();
 
-        if(!empty($petugasIds)) {
+
+
             DB::table('petugases')->insert([
-                'petugas_id' => $petugasIds[array_rand($petugasIds)],
+                'id_petugas' => rand(1,50),
                 'nama_petugas' => Str::random(35),
                 'username' => Str::random(25),
                 'password' => Str::random(32),
                 'telp' => Str::random(13),
-                'status' => collect(['proses', 'selesai'])->random(),
+                'level' => "admin",
             ]);
-        }
+        
     }
 }

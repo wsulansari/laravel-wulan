@@ -12,20 +12,25 @@ class pengaduanSeeder extends Seeder
      * Run the database seeds.
      */
     public function run(): void
-    {
-        $pengaduanIds = DB::table('pengaduans')->pluck('id')->toArray();
+    {  
 
-        if (!empty($pengaduansIds)) {
+        $nik = DB::table("masyarakats")->insertGetId([
+            'nik'  => '123456789',
+            'nama' => 'Wulansari',
+            'username'  => 'ulan',
+            'password'  => substr(md5(Str::random(32)), 0, 32),
+            'telp'  => '087866332399',
+        ]);
             DB::table('pengaduans')->insert([
-                'pengaduan_id' => $pengaduanIds[array_rand($pengaduanIds)],
+                'id_pengaduan' => rand(1,30),
                 'tgl_pengaduan' => now(),
-                'nik' => Str::random(16),
-                'isi_laporan' => Str::random(),
+                'nik' =>'123456789',
+                'isi_laporan' => Str::random(255),
                 'foto' => Str::random(225),
-                'status' => collect(['proses', 'selesai'])->random(),
+                'status' => "proses",
             ]);
 
-        }
+        
        
         
         

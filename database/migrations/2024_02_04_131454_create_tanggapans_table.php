@@ -12,11 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('tanggapans', function (Blueprint $table) {
-            $table->id('id_tanggapans');
-            $table->foreignId('id_pengaduans')->references('id')->on('pengaduans');
-            $table->date('tanggal_tanggapans');
-            $table->text('tanggapans');
-            $table->foreignId('id_petugases')->constraind('petugases', 'id_petugases');
+            $table->id('id_tanggapan');
+            $table->foreignId('id_pengaduan')->references('id_pengaduan')->on('pengaduans');
+            $table->date('tanggal_tanggapan');
+            $table->text('tanggapan');
+            $table->foreignId('id_petugas')->references('id_petugas')->on('petugases');
             $table->timestamps();
         });
     }
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tanggapan');
+        Schema::dropIfExists('tanggapans');
     }
 };
