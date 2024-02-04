@@ -1,65 +1,105 @@
 <!DOCTYPE html>
-<!--
-This is a starter template page. Use this page to start your new project from
-scratch. This page gets rid of all links and provides the needed markup only.
--->
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Starter</title>
 
-  <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="{{ asset('AdminLTE-3.2.0/plugins/fontawesome-free/css/all.min.css') }}">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="{{ asset('AdminLTE-3.2.0/dist/css/adminlte.min.css') }}">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SB Admin 2 - Dashboard</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="{{ asset('adminsb/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
+    <link
+        href="{{ asset('adminsb/https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i') }}"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="{{ asset('adminsb/css/sb-admin-2.min.css') }}" rel="stylesheet">
+
 </head>
-<body class="hold-transition sidebar-mini">
-<div class="wrapper">
 
-  <!-- Navbar -->
-  @include('template.separate.navbar')
-  <!-- /.navbar -->
+<body id="page-top">
 
-  <!-- Main Sidebar Container -->
-    @include('template.separate.Sidebar');
+    <!-- Page Wrapper -->
+    <div id="wrapper">
 
-  <!-- Content Wrapper. Contains page content -->
-    @include('template.separate.main');
+        <!-- Sidebar -->
+        @include('template.separate.sidebar')
+        <!-- End of Sidebar -->
 
-  <!-- /.content-wrapper -->
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
 
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-    <div class="p-3">
-      <h5>Title</h5>
-      <p>Sidebar content</p>
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                @include('template.separate.navbar')
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                @include('template.separate.main')
+                <!-- /.container-fluid -->
+
+            </div>  
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            @include('template.separate.footer')
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
     </div>
-  </aside>
-  <!-- /.control-sidebar -->
+    <!-- End of Page Wrapper -->
 
-  <!-- Main Footer -->
-  <footer class="main-footer">
-    <!-- To the right -->
-    <div class="float-right d-none d-sm-inline">
-      Anything you want
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
+            </div>
+        </div>
     </div>
-    <!-- Default to the left -->
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
-  </footer>
-</div>
-<!-- ./wrapper -->
 
-<!-- REQUIRED SCRIPTS -->
+    <!-- Bootstrap core JavaScript-->
+    <script src="{{ asset('adminsb/vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('adminsb/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
-<!-- jQuery -->
-<script src="{{ asset('adminlte/plugins/fontawesome-free/css/all.min.css') }}"></script>
-<!-- Bootstrap 4 -->
-<script src="{{ asset('adminlte/dist/css/adminlte.min.css') }}" ></script>
-<!-- AdminLTE App -->
-<script src="dist/js/adminlte.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="{{ asset('adminsb/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="{{ asset('adminsb/js/sb-admin-2.min.js') }}"></script>
+
+    <!-- Page level plugins -->
+    <script src="{{ asset('adminsb/vendor/chart.js/Chart.min.js') }}"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="{{ asset('adminsb/js/demo/chart-area-demo.js') }}"></script>
+    <script src="{{ asset('adminsb/js/demo/chart-pie-demo.js') }}"></script>
+
 </body>
+
 </html>
