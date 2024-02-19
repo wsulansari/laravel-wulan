@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\SPPController;
+use Illuminate\Routing\Route as RoutingRoute;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,15 +15,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/template', function () {
-    return view('template.master');
+Route::get('/', function () {
+    return view('welcome');
 });
 
-Route::controller(SppController::class)->group(function(){
+Route::controller(SPPController::class)->group(function () {
     Route::get('/spp', 'index')->name('spp.index');
     Route::get('/spp/create', 'create')->name('spp.create');
-    Route::post('/spp', 'store')->name('spp.store');
-    Route::get('/spp/{id}/edit','edit')->name('spp.edit');
-    Route::put('/spp/{id}','update')->name('spp.update');
-    Route::delete('/spp/{id}','destroy')->name('spp.destroy');
-    });
+    Route::post('/sppp', 'store')->name('spp.store');
+    Route::get('/spp/{spp}', 'show')->name('spp.show');
+    Route::get('/spp/{spp}/edit', 'edit')->name('spp.edit');
+    Route::put('/spp/{spp}', 'update')->name('spp.update');
+    Route::delete('/spp/{id}', 'destroy')->name('spp.destroy');
+});
+Route::view('/template','template.master');
+
+Route::resource('/spp', SPPController::class);

@@ -56,17 +56,17 @@
                         {{ $value->nominal }}
                       </td>
                       <td>
-                        <form 
+                        <form
                         action="{{route('spp.destroy', $value->spp_id)}}" method="post">
                         <a href="{{route('spp.edit', $value->spp_id)}}" class="btn btn-sm btn-warning">
                           Edit
                         </a>
-                       
+
                       @csrf
                       @method('DELETE')
                       <input type="submit" class="btn btn-sm btn-danger" style="display:inline" value="Hapus">
                         </form>
-                      </td>                 
+                      </td>
                     </tr>
                   @empty
                   <tr>
@@ -91,12 +91,12 @@
     <script>
         $(function () {
           $("#table").DataTable({
-            "paging": true, 
-            "lengthChange": false, 
-            "searching": false, 
+            "paging": true,
+            "lengthChange": false,
+            "searching": false,
             "ordering": true,
-            "info": true, 
-            "autoWidth": false, 
+            "info": true,
+            "autoWidth": false,
             "responsive": true,
           });
         });

@@ -1,7 +1,7 @@
 @extends('template.master')
 
 @section('header', "Masukkan SPP")
-    
+
 @section('content')
 <div class="row">
     <div class="col-lg-7">
@@ -28,10 +28,10 @@
                               <span class="error invalid-feedback" style="display: inline;">{{$message}}</span>
                             @enderror
                         </div>
-                       
+
                     </div>
                 </div>
-              
+
                 <div class="card-footer">
                     <button type="submit" class="btn btn-warning">Update</button>
                   </div>
